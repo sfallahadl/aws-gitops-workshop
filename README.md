@@ -1,7 +1,6 @@
 
 
-# AWSWorkshop.io base workshop 
+# AWSWorkshop GitOps Workshop 
 
-This is a base workshop.  Clone and start from this repo to create your workshop.
-
+Learn to do GitOps at scale with AWS, Codefresh, and Argo CD. 
 
