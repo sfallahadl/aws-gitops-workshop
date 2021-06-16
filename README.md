@@ -28,3 +28,8 @@ You can edit documentation files and see the updates by reloading the browser.
 1. Open `http://localhost:1313` in your browser, and voila.
 
 You can edit documentation files and see the updates by reloading the browser.
+
+### Preview Pull Requests
+
+If you create a Pull Request, Netlify will build it and provide
+you with a preview URL. See the comments on the Pull Request
