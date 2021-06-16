@@ -1,0 +1,9 @@
+version: "2"
+services:
+  site:
+    command: serve --environment staging
+    image: klakegg/hugo:0.71.0-ext-alpine
+    volumes:
+      - ./:/src/
+    ports:
+      - 1313:1313
