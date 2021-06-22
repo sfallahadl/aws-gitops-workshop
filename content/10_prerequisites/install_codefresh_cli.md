@@ -36,6 +36,34 @@ You should see the `codefresh` version message.
 
 ## Connecting your CLI with your Codefresh account
 
-![Step 4](/images/prerequisites/api-token.png)
+To connect your Codefresh CLi with your own account you need to [setup 
+authentication](https://codefresh.io/docs/docs/integrations/codefresh-api/#authentication-instructions).
+
+Sign in Codefresh and visit your user settings at [https://g.codefresh.io/user/settings](https://g.codefresh.io/user/settings)
+
+Scroll down until the *API Keys* section and click the *Generate button*
+
+![Codefresh API settings](/images/prerequisites/api-token.png)
+
+Enter an arbitrary key name (for example `aws-workshop`) and enable
+the first checkbox next to *Scopes*.
+
+Finally click the *Create* button in the dialog and make sure to copy the API key (it will not be visible again after you leave this screen)
+
+Then in your terminal enter the following:
+
+```
+codefresh auth create-context --api-key <your_key_here>
+```
+
+Now the CLI is authenticated against your Codefresh account. 
+
+Type 
+
+```
+codefresh get context
+```
+
+to verify the authentication.
 
 

@@ -23,7 +23,7 @@ sudo mv ./kubectl /usr/local/bin/kubectl
 This will install `kubectl` in your **Cloud9** environment. To test to make sure the command is installed properly, execute the command:
 
 ```
-kubectl version --client
+kubectl version 
 ```
 
 You should see the `kubectl` version message.
