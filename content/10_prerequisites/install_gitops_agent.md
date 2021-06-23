@@ -4,28 +4,20 @@ chapter = false
 weight = 15
 +++
 
-For this workshop you will use [eksctl](https://eksctl.io/introduction/#installation). Once you install eksctl, you will be ready to get started.
-
-At the terminal command prompt, enter the following two commands:
-
-```
-curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
-```
+To start working with GitOps you need to install an agent on your cluster.
+This agent will monitor your Git repositories and automatically apply 
+changes to your cluster after each Git action you perfom
 
 ```
-sudo mv /tmp/eksctl /usr/local/bin
+codefresh install gitops codefresh
 ```
 
-This will install `eksctl` in your **Cloud9** environment. To test to make sure the command is installed properly, execute the command:
+This command will start a wizard that will ask you several questions.
+After you answer them the installation of the agent will take place.
 
-```
-eksctl get cluster
-```
+You can see the status of your agent at [https://g.codefresh.io/account-admin/account-conf/integration/gitops](https://g.codefresh.io/account-admin/account-conf/integration/gitops).
 
-You should get a "No clusters found" message. Running the following command will indicate which version of the command line tool you have installed:
 
-```
-eksctl version
-```
+![GitOps Integration](/images/prerequisites/gitops-integration.png)
 
-For the current workshop, we will be using `eksctl` **0.53** or newer. Please verify the version, as some features are only available in the **0.53** version of `eksctl` and newer.
+Now we are ready to start GitOps deployments.
