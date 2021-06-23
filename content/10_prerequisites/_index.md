@@ -8,8 +8,6 @@ weight = 10
 
 Welcome to the AWS Modernization Workshop with GitOps and Codefresh.
 
-![c9before](/images/codefresh-logo.png)
-
 Before you can start the workshop you need to setup free accounts with the following services:
 
 - Create a [GitHub account](https://github.com/join)

@@ -4,16 +4,21 @@ chapter: true
 weight: 1
 ---
 
-# AWS Modernization Workshop
+# AWS Modernization Workshop with GitOps and Codefresh
+
+![Codefresh logo](/images/codefresh-logo.png)
 
 ### Welcome
 
-In this workshop you will learn why DevOps is a pattern for modernization and how to use patterns to release features and functionality at a faster pace.
+In this workshop you will learn about GitOps and setup a complete delivery process
+from source code to deployment using Kubernetes on AWS. 
 
 ### Learning Objectives
 - Deploy Cloud9 as an IDE for completing workshop exercises.
-- How DevOps patterns help to release features and functionality faster.
-- Best practices for implementing 2 pizza team pipelines.
+- Learn about GitOps deployments
+- Create an EKS cluster
+- Setup a Continuous Integration pipeline to create a container
+- Learn about Continuous Delivery with Kubernetes and GitOps
 
 {{% notice warning %}}
 <p style='text-align: left;'>
