@@ -4,7 +4,7 @@ chapter = true
 weight = 20
 +++
 
-# Prerequisites
+# Create a basic CI pipeline
 
 {{% children showhidden="false" %}}
 
