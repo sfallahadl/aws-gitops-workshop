@@ -14,10 +14,9 @@ or authentication information. In a real production application you might use a 
 
 ## Create an Dockerhub account
 
-Sign up for a free dockerhub account at [https://hub.docker.com/signup](https://hub.docker.com/signup).
+Sign up for a free Dockerhub account at [https://hub.docker.com/signup](https://hub.docker.com/signup).
 
-Note down your username and password
-as we will use them later in Codefresh
+Note down your username and password as we will use them [later in Codefresh](https://codefresh.io/docs/docs/integrations/docker-registries/docker-hub/).
 
 
 ## Connect the container registry to Codefresh

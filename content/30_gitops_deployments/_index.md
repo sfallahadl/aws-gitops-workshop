@@ -4,7 +4,7 @@ chapter = true
 weight = 30
 +++
 
-# Prerequisites
+# Deploying with GitOps
 
 {{% children showhidden="false" %}}
 
