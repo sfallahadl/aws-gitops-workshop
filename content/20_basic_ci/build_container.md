@@ -78,7 +78,7 @@ steps:
  ```     
 
  {{% notice note %}}
-Remember to replace `<your docker username>` with your own Dockerhub username
+Remember to replace `<your docker username>` with your own Dockerhub username. Notice also the `registry` property that tells Codefresh where to push the image after it is built.
 {{% /notice %}}
 
 
@@ -96,4 +96,36 @@ Click the Save button to apply your changes. Then click the Run button to start 
 
 ## Running the pipeline
 
+Once the build is started Codefresh will navigate you to the build progress of the sample application.
+
+You can click on any step and see its logs.
+
+![Push image](/images/basic_ci/image-push.png)
+
+ {{% notice info %}}
+The Codefresh build step both builds **and** pushes the image to the registry. Even though Codefresh has a separate push step (for pushing an existing image to a container registry), it is completely.
+{{% /notice %}}
+
+The first time the pipeline runs, Codefresh will download all dependencies of the application. Every subsequent run will be much faster as the pipeline cache will take effect.
+
+After a while the build should finish with success. All previous runs are in the [Builds page](https://g.codefresh.io/builds2) from now on accessible by clicking on *Builds* in the left sidebar.
+
+![Previous builds](/images/basic_ci/builds.png)
+
 ## Inspecting your Docker image
+
+With a successful run of the pipeline you will be able to see your created image in the [images dashboard](https://g.codefresh.io/images/) accessible by clicking on *Images* on the left sidebar.
+
+![View the image](/images/basic_ci/registry.png)
+
+You can click on the row of the image and see additional details and metadata of the image. Feel free to explore the tabs at the top for more information.
+
+The *layers* tabs shows how the image was created and which files/layers contribute to its total size.
+
+![Docker layers](/images/basic_ci/layers.png)
+
+Since we used Dockerhub as a registry, you can also find the same image in the Dockerhub UI at [`https://hub.docker.com/r/<your dockerhub id>/my-app-image/tags`](https://hub.docker.com/r/<your dockerhub id>/my-app-image/tags).
+
+![Dockerhub tag](/images/basic_ci/dockerhub.png)
+
+We now have a container image created in a fully automated way. Every time you perform a commit in the source code, Codefresh will run the pipeline again creating another tag with the new Git hash.
