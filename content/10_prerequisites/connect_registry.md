@@ -21,7 +21,7 @@ Note down your username and password as we will use them [later in Codefresh](ht
 
 ## Connect the container registry to Codefresh
 
-Log into Codefresh and go to your Registry settings at [https://g.codefresh.io/account-admin/account-conf/integration/registryNew](https://g.codefresh.io/account-admin/account-conf/integration/registryNew)
+Log into Codefresh and go to your Registry settings at [https://g.codefresh.io/account-admin/account-conf/integration/registryNew](https://g.codefresh.io/account-admin/account-conf/integration/registryNew).
 
 Click the *Add Registry provider* button and select *Dockerhub* from the drop down menu.
 
