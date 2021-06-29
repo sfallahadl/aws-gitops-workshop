@@ -59,6 +59,7 @@ version: '1.0'
 stages:
   - checkout
   - package
+  - verify
 steps:
   main_clone:
     title: Cloning main repository...
