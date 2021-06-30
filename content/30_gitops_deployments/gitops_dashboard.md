@@ -1,5 +1,5 @@
 +++
-title = "Avoiding Configuration drift"
+title = "The GitOps dashboard"
 chapter = false
 weight = 32
 +++
