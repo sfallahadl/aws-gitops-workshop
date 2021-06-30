@@ -158,7 +158,9 @@ steps:
     stage: package
     image_name: kostiscodefresh/my-app-image
     working_directory: ./
-    tag: "${{CF_SHORT_REVISION}}"
+    tags:
+    - "${{CF_SHORT_REVISION}}"
+    - latest
     dockerfile: Dockerfile
     registry: dockerhub
   scan_image:

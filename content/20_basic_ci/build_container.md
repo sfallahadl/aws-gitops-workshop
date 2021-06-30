@@ -73,7 +73,9 @@ steps:
     stage: package
     image_name: <your docker username>/my-app-image
     working_directory: ./
-    tag: "${{CF_SHORT_REVISION}}"
+    tags:
+    - "${{CF_SHORT_REVISION}}"
+    - latest
     dockerfile: Dockerfile
     registry: dockerhub
  ```     
