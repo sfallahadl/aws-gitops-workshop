@@ -59,15 +59,61 @@ For simplicity reasons we deploy the application to the "default" namespace of t
 
 ## Viewing the deployed application
 
+The application is now deployed in the cluster and is exposed via a Kubernetes service.
+To find out the IP of the service you can click on the application row
+in the GitOps dashboard and then in the next screen, choose the *Services* tab.
+
+![Services tab](/images/gitops/services.png)
+
+This screen shows all exposed services that your application defines. Under the *Endpoint* column you will see the IP address of the service (it is different for each deployment).
+
+Click on the URL and you should see the application on your browser.
+
+
+![Running application](/images/gitops/app.png)
+
+
+Congratulations! 
+
 
 ## Deploying a new version
 
-To perform our first deployment we need to decide what application image we will use.
-In the Codefresh UI click on *Images* on the sidebar and locate the image that we created in the previous section of the workshop
+The first deployment is now active. To see how GitOps works in practice, we will make some additional deployments.
 
-![Integration tests](/images/gitops/image-tag.png)
+The main concept of GitOps is that ALL operations are happening via Git. 
 
-Note down the tag and URL on the image. In the example above it is `docker.io/kostiscodefresh/my-app-image:385643c`
+To create a new application version make a change in GitHub int the `aws-gitops-app/edit/main/src/main/java/sample/actuator/HelloWorldService.java` file.
+
+![Application change](/images/gitops/app-change.png)
+
+The exact change is not really important. Feel free to change the hello world message to something else (but keep the word "Spring" as it is checked by a Unit test).
+
+
+
+Commit your change and then click on the *Builds* section on the left sidebar in the Codefresh UI. Codefresh will automatically launch a pipeline to create a docker image as was described in the previous section.
+
+![Edit new version](/images/gitops/git-change-app.png)
+
+After the pipeline has finished a new Docker image will be created. Click on *Images* on the left sidebar and click on "my-app-image".
+
+In the Activity column note down the last tag of the container image.
+
+![Create image](/images/gitops/image-tag.png)
+
+In the example above it is `docker.io/kostiscodefresh/my-app-image:385643c`
+
+Now in Github edit the file `aws-gitops-app-manifests/blob/main/simple-java-app/values.yaml` and enter your new container tag.
+
+![Edit new version](/images/gitops/new-version-manual.png)
+
+Commit your changes and after a brief amount of time, Codefresh GitOps will fetch the new container image. If you now visit your application in your browser 
+you will see the new status message.
+
+{{% notice note %}}
+You might think that deploying a new version involves too many manual steps. Will automate the version change in the next section of this workshop. The important point here is that deploying a new version happens only via new changes in Git and not clicking buttons on running scripts manually. Using only Git operations is the pillar of GitOps.
+{{% /notice %}}
+
+
 
 
 
