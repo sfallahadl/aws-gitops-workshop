@@ -1,5 +1,5 @@
 +++
-title = "Basic CD"
+title = "Automated deployments"
 chapter = false
 weight = 41
 +++
