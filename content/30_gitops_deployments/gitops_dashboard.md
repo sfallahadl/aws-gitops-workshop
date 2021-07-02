@@ -47,6 +47,32 @@ To answer this question you can easily click-through the following screens in or
 
 Here is how it works:
 
+From the GitOps dashboard, click the *Services* tab. This shows
+all deployed Services on the cluster.
+
+Codefresh clearly shows which container image is powering this service. Click on the image name in the table column *IMAGES*
+
+![Trace1](/images/gitops/trace1.png)
+
+This takes you the Codefresh image dashboard that shows the metadata for this container
+including its complete history. From the top navigation choose the *Logs* tab.
+
+![Trace2](/images/gitops/trace2.png)
+
+In the new screen you will which pipeline build created this image. Here you can have multiple options. You can click on the pipeline name at the top to edit that pipeline.
+
+But most importantly you can click on the name of the commit message.
+
+![Trace3](/images/gitops/trace3.png)
+
+The final click will take you to Github (or any other of the supported Git providers) and show the the exact commit that use used as an input to the pipeline (and therefore the source of the container image).
+
+![Trace4](/images/gitops/trace4.png)
+
+This way you can also go from a deployed image back to the source code. This journey is only possible with Codefresh, because Codefresh has visibility both to the CI and the CD part of the process.
+
+
+
 
 
 ## 
