@@ -11,6 +11,6 @@ Congratulations on completing the workshop! It is a good idea
 to clean up your cloud resource so that no additional charges are billed to you.
 
 
-XXX
+In the AWS console go to the Elastic Kubernetes service, select your cluster and delete it using the actions drop down.
 
 {{% children showhidden="false" %}}
