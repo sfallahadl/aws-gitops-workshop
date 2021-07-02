@@ -82,7 +82,7 @@ The first deployment is now active. To see how GitOps works in practice, we will
 
 The main concept of GitOps is that ALL operations are happening via Git. 
 
-To create a new application version make a change in GitHub int the `aws-gitops-app/edit/main/src/main/java/sample/actuator/HelloWorldService.java` file.
+To create a new application version make a change in GitHub int the `aws-gitops-app/src/main/java/sample/actuator/HelloWorldService.java` file.
 
 ![Application change](/images/gitops/app-change.png)
 

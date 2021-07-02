@@ -156,7 +156,7 @@ steps:
     title: Building Docker Image
     type: build
     stage: package
-    image_name: kostiscodefresh/my-app-image
+    image_name: <your docker username>/my-app-image
     working_directory: ./
     tags:
     - "${{CF_SHORT_REVISION}}"
@@ -168,7 +168,7 @@ steps:
     stage: verify
     image: 'aquasec/trivy'
     commands:
-      - trivy image docker.io/kostiscodefresh/my-app-image:${{CF_SHORT_REVISION}}  
+      - trivy image docker.io/<your docker username>/my-app-image:${{CF_SHORT_REVISION}}  
   run_integration_tests:
     title: Integration tests
     stage: verify
@@ -188,6 +188,11 @@ steps:
         commands:
           - "curl http://my-spring-app:8080/"      
 ```
+
+{{% notice info %}}
+Remember to change the value of `<your docker username>` to your own Dockerhub username.
+{{% /notice %}}
+
 
 Click the *Run* button at the bottom of the screen to launch a new build.
 
