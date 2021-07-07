@@ -106,7 +106,7 @@ You can click on any step and see its logs.
 ![Push image](/images/basic_ci/image-push.png)
 
  {{% notice info %}}
-The Codefresh build step both builds **and** pushes the image to the registry. Even though Codefresh has a separate push step (for pushing an existing image to a container registry), it is completely.
+The Codefresh build step both builds **and** pushes the image to the registry. Even though Codefresh has a separate push step (for pushing an existing image to a container registry), it is completely optional.
 {{% /notice %}}
 
 The first time the pipeline runs, Codefresh will download all dependencies of the application. Every subsequent run will be much faster as the pipeline cache will take effect.

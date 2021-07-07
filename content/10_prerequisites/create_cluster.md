@@ -25,8 +25,8 @@ eksctl version
 # Creating an EKS cluster via eksctl
 eksctl create cluster \
 --name basic-eks \
---region us-east-1\
---zones us-east-1a,us-east1b
+--region us-east-1 \
+--zones us-east-1a,us-east-1b
 ```
 
 {{% notice tip %}}

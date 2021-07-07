@@ -30,7 +30,7 @@ Your Cloud9 environment will have access to the same AWS resources as the user w
 - Set the *Instance type* to **t2.micro (1 GiB RAM + 1 vCPU)**.
 - Leave all other defaults unchanged.
 
-![Step 6](/images/cloud9/c9-step6-b.png)
+![Step 6](/images/cloud9/c9-step6.png)
 
 6. Select **Next step**.
 
