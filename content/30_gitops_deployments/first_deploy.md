@@ -35,7 +35,7 @@ Fill in the details.
 * Project: default
 * Application: `my-java-app`
 * Manual/Automatic toggle: Choose automatic
-* Repository URL: https://github.com/<your github>/aws-gitops-app-manifests
+* Repository URL: `https://github.com/<your github>/aws-gitops-app-manifests`
 * Revision: HEAD
 * Path: `./simple-java-app`
 * Cluster: "in cluster"
