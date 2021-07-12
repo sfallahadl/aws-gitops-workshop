@@ -48,7 +48,7 @@ Scroll down until the *API Keys* section and click the *Generate button*
 Enter an arbitrary key name (for example `aws-workshop`) and enable
 the first checkbox next to *Scopes*.
 
-Finally click the *Create* button in the dialog and make sure to copy the API key (it will not be visible again after you leave this screen)
+Finally click the *Create* button in the dialog and make sure to copy the API Token that was generated (it will not be visible again after you leave this screen)
 
 Then in your terminal enter the following:
 

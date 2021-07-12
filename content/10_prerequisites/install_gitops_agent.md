@@ -15,6 +15,12 @@ codefresh install gitops codefresh
 This command will start a wizard that will ask you several questions.
 After you answer them the installation of the agent will take place.
 
+{{% notice warning %}}
+The installation process will take several minutes depending on your cluster
+resources and network speed. Please be patient and don't interrupt the process
+by pressing CTRL-C or closing the terminal.
+{{% /notice %}}
+
 You can see the status of your agent at [https://g.codefresh.io/account-admin/account-conf/integration/gitops](https://g.codefresh.io/account-admin/account-conf/integration/gitops).
 
 

@@ -106,7 +106,7 @@ steps:
     stage: "gitops"
     arguments:
       repo: '${{CF_REPO_OWNER}}/aws-gitops-app-manifests'
-      git: github-1
+      git: github
       working_directory: '/codefresh/volume/aws-gitops-app-manifests'
       commit_message: Updated Helm values
       git_user_name: ${{CF_COMMIT_AUTHOR}}
@@ -119,6 +119,9 @@ steps:
 
 {{% notice info %}}
 Remember to change the value of `<your docker username>` to your own Dockerhub username and `<your email address>` to your Github email address.
+
+In a real application you should also use [Codefresh variables](https://codefresh.io/docs/docs/configure-ci-cd-pipeline/shared-configuration/)
+instead of hardcoding everything in the pipeline
 {{% /notice %}}
 
 The new steps of this pipeline do the following.
