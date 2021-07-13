@@ -81,7 +81,7 @@ steps:
  ```     
 
  {{% notice note %}}
-Remember to replace `<your docker username>` with your own Dockerhub username. Notice also the `registry` property that tells Codefresh where to push the image after it is built.
+Remember to replace `<your docker username>` with your own Dockerhub username. Notice also the `registry` property that tells Codefresh where to push the image after it is built. This is the name of the Dockerhub integration that we setup in the previous section ("Connect Registry").
 {{% /notice %}}
 
 

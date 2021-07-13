@@ -38,4 +38,10 @@ Fill the 3 fields
 
  Finally click the *Save* button to apply your changes.
 
+ {{% notice warning %}}
+The registry name we used (`dockerhub` in our case) is important because
+we will reference it in the following sections inside our pipelines. If you
+choose another name for your integration, remember to note it down.
+{{% /notice %}}
+
 
