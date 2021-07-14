@@ -31,30 +31,26 @@ Finally the *Current State* tabs shows a live overview of the Kubernetes resourc
 
 Using the GitOps dashboard can quickly answer questions such as who deployed, which features and when.
 
-## Following a deployment back to source code
+## Using the GitOps dashboard as a single pane of view
 
-One of the big advantages of Codefresh is the full traceability if offers from a git commit all the way to production. 
+The GitOps dashboard offered by Codefresh is one of a kind as it centralizes in a single view several pieces of information without the need to hunt them down in other dashboards.
 
-One of the most common questions in a software release is "which source code revision is responsible for this environment". Answering this question is not always easy with traditional deployment solutions that are based on scripts. 
+Out of the box you get
 
-To answer this question you can easily click-through the following screens in order:
+1. A history graph with success/failures and time filters
+1. A history of all GitOps deployments in a reverse chronological order
+1. Several links on each deployment event that point back to the pipeline that was responsible for this deployment as well as the Git hash that triggered it.
+1. Pull request information in the case of pull request events
+1. A clear view on which Kubernetes services were touched by this deployment.
 
-1. GitOps services tab
-1. Images dashboard
-1. Images Logs tab
-1. Pipeline view
-1. Github view
+![GitOps dashboard details](/images/gitops/gitops-dashboard-details.png)
 
-Here is how it works:
+With the optional Jira integration you also get to see which features were actually
+part of the deployment. A great advantage for product managers and product owners since
+now you can instantly answer questions such "what was deployed now in production" or "which environment contains feature X".
 
-From the GitOps dashboard, click the *Services* tab. This shows
-all deployed Services on the cluster.
-
-Codefresh clearly shows which container image is powering this service. Click on the image name in the table column *IMAGES*
-
-![Trace1](/images/gitops/trace1.png)
-
-This takes you to the Codefresh image dashboard that shows the metadata for this container
+By clicking on any image in the previous or updated services section you can go back to the image dashboard of Codefresh.
+The Codefresh image dashboard shows the metadata for this container
 including its complete history. From the top navigation choose the *Logs* tab.
 
 ![Trace2](/images/gitops/trace2.png)
@@ -70,6 +66,8 @@ The final click will take you to Github (or any other of the supported Git provi
 ![Trace4](/images/gitops/trace4.png)
 
 This way you can also go from a deployed image back to the source code. This journey is only possible with Codefresh, because Codefresh has visibility both to the CI and the CD part of the process.
+
+You can also go to the Git hash view and the pipeline view right from the GitOps dashboard as well.
 
 
 
