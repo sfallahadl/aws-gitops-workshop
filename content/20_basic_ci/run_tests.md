@@ -124,6 +124,13 @@ To make sure that the application is actually up and ready to serve requests bef
 
 For more details see the [Checking readiness of a service](https://codefresh.io/docs/docs/codefresh-yaml/service-containers/#checking-readiness-of-a-service) section in the Codefresh documentation.
 
+{{% notice warning %}}
+To make sure that your pipeline has enough resources to execute integration tests, click the *Settings* tab on the pipeline editor screen and then the 
+*Runtime* section on the left menu. [Assign your pipeline](https://codefresh.io/docs/docs/configure-ci-cd-pipeline/pipelines/#runtime)
+to a *Medium* instance.
+If you don't see such option then your Codefresh plan is already using Medium instances and there is nothing you need to do.
+{{% /notice %}}
+
 {{% notice tip %}}
 Codefresh has several more features for service containers such as preloading test data to databases, binding containers to localhost, reusing containers for all pipeline steps and so on.
 {{% /notice %}}

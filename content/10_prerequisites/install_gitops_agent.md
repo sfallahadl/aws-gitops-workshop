@@ -12,7 +12,10 @@ changes to your cluster after each Git action you perfom
 codefresh install gitops codefresh
 ```
 
-This command will start a wizard that will ask you several questions.
+This command will start a wizard that will ask you several questions. Choose the default
+answer in all questions.
+
+
 After you answer them the installation of the agent will take place.
 
 {{% notice warning %}}
