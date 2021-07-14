@@ -54,7 +54,7 @@ Codefresh clearly shows which container image is powering this service. Click on
 
 ![Trace1](/images/gitops/trace1.png)
 
-This takes you the Codefresh image dashboard that shows the metadata for this container
+This takes you to the Codefresh image dashboard that shows the metadata for this container
 including its complete history. From the top navigation choose the *Logs* tab.
 
 ![Trace2](/images/gitops/trace2.png)

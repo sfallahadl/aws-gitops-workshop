@@ -11,7 +11,7 @@ manifests (Helm chart in our example application).
 In the previous section you have seen how to deploy new versions of your application
 by manually opening pull requests in the configuration repository.
 
-We can fully automate this process by changing the Kubernetes manifests as part of the application pipeline.
+We can fully automate this process by changing the Kubernetes manifests as part of the application pipeline. This means that instead of having a human changing both the application source code and the manifests, we will have our pipeline automatically update the manifests whenever the application source code is changed with the proper image tag.
 
 ## Changing automatically the Kubernetes Helm charts
 
@@ -128,7 +128,8 @@ The new steps of this pipeline do the following.
 
 1. Clone the repository that contains the Helm chart of the application
 2. Use the [yq](https://github.com/mikefarah/yq) utility to change the value of the image tag
-3. Use the [Codefresh commit plugin](https://codefresh.io/steps/step/git-commit) to push the changes back to the repo.
+3. Use the [Codefresh commit plugin](https://codefresh.io/steps/step/git-commit) to push the changes back to the repo. This is a key step in this pipeline because it means that we no longer need to edit manually the manifests and commit/push changes
+there. The pipeline will take care of this.
 
 Notice also that for the deployment steps we [use conditionals](https://codefresh.io/docs/docs/codefresh-yaml/conditional-execution-of-steps/) to restrict them only to the main branch as we don't want to deploy to our "production" environment when a Pull request happen to an unrelated branch.
 
@@ -147,7 +148,7 @@ It will then
 1. Scan the docker image for security issues
 1. Run integration tests
 1. Checkout the manifests and update the tag in the Helm values
-1. Commit the results back
+1. Commit/Push the results back in the manifests repository.
 
 At this point the Codefresh GitOps agent will perform the deployment automatically.
 After some minutes if you visit the application again in your browser you will see the new application version deployed.

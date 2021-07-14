@@ -82,15 +82,20 @@ The first deployment is now active. To see how GitOps works in practice, we will
 
 The main concept of GitOps is that ALL operations are happening via Git. 
 
-To create a new application version make a change in GitHub int the `aws-gitops-app/src/main/java/sample/actuator/HelloWorldService.java` file.
+To create a new application version make a change in GitHub in the `aws-gitops-app/src/main/java/sample/actuator/HelloWorldService.java` file.
 
 ![Application change](/images/gitops/app-change.png)
 
 The exact change is not really important. Feel free to change the hello world message to something else (but keep the word "Spring" as it is checked by a Unit test).
 
+{{% notice info %}}
+For simplicity reasons we make a change straight into the main branch. In a production application we would make the change in a feature branch and [create a pull request](https://codefresh.io/docs/docs/ci-cd-guides/preview-environments/)
+before actually accepting the change.
+{{% /notice %}}
 
 
-Commit your change and then click on the *Builds* section on the left sidebar in the Codefresh UI. Codefresh will automatically launch a pipeline to create a docker image as was described in the previous section.
+
+Commit and push your change and then click on the *Builds* section on the left sidebar in the Codefresh UI. Codefresh will automatically launch a pipeline to create a docker image as was described in the previous section.
 
 ![Edit new version](/images/gitops/git-change-app.png)
 
@@ -102,12 +107,13 @@ In the Activity column note down the last tag of the container image.
 
 In the example above it is `docker.io/kostiscodefresh/my-app-image:385643c`
 
-Now in Github edit the file `aws-gitops-app-manifests/blob/main/simple-java-app/values.yaml` and enter your new container tag.
+Now in Github go your second Git repository that contains the Kubernetes manifests (and not the application source code) and edit the file `aws-gitops-app-manifests/blob/main/simple-java-app/values.yaml` and enter your new container tag.
 
 ![Edit new version](/images/gitops/new-version-manual.png)
 
-Commit your changes and after a brief amount of time, Codefresh GitOps will fetch the new container image. If you now visit your application in your browser 
-you will see the new status message.
+Commit your changes and after a brief amount of time, Codefresh GitOps will fetch the new container image. If you now visit your application endpoint in your browser 
+you will see the new status message. If you don't remember your endpoint URL go back to your GitOps dashboard, click on your application and then find your endpoint
+in the second tab called *Services*.
 
 {{% notice note %}}
 You might think that deploying a new version involves too many manual steps. Will automate the version change in the next section of this workshop. The important point here is that deploying a new version happens only via new changes in Git and not clicking buttons on running scripts manually. Using only Git operations is the pillar of GitOps.
