@@ -33,4 +33,13 @@ eksctl create cluster \
 This step will take roughly 30 minutes to complete. What's happening under the hood is eksctl is provisioning an EKS cluster via CloudFormation. You can go to the CloudFormation dashboard to see what it's doing!
 {{% /notice %}}
 
+{{% notice warning %}}
+If you are hitting the default VPC limit for your region, either choose a different region for the cluster, or request a limit increase from your AWS admin.
+{{% /notice %}}
+
+
+{{% notice warning %}}
+If you are using a company AWS account and you log in via SSO you might experience timeouts before your cluster is created. In that case delete the cluster (as it is in an unknown state) and ask your SSO admin to increase the session limit.
+{{% /notice %}}
+
 You can also go to the EKS dashboard to see if your cluster has finished provisioning. Once your cluster is created, please go to the next page and configure your Cloud9 workspace!
