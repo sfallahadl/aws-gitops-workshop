@@ -14,7 +14,7 @@ We enhance the pipeline with extra steps that
 2. deploy the application in a temporary environment and run integration tests against it
 3. scan the container image for security issues.
 
-This is enhanced pipeline:
+This is the enhanced pipeline:
 
 ![Enhanced pipeline](/images/basic_ci/enhanced-pipeline.png)
 
@@ -40,13 +40,13 @@ Add this snippet in your pipeline after the `main_clone` step.
 
 In a similar way you could run tests with gradle, gulp, node, jasmine, protractor and any other programming framework that you use. Simply choose a docker image that contains the tool and its dependencies and pass it to a freestyle step. Most times all popular tools already have a public container image available in Dockerhub.
 
-In the case of Maven we also want to cache all dependencies so we place the Maven repository on the [Codefresh volume](https://codefresh.io/docs/docs/configure-ci-cd-pipeline/pipeline-caching/#traditional-build-caching) which a shared volume between all steps all the pipeline. It is also saved for any subsequent runs of the same pipeline.
+In the case of Maven we also want to cache all dependencies so we place the Maven repository on the [Codefresh volume](https://codefresh.io/docs/docs/configure-ci-cd-pipeline/pipeline-caching/#traditional-build-caching) which is a shared volume between all steps all the pipeline. It is also saved for any subsequent runs of the same pipeline.
 
 ## Add security scanning
 
 Apart from quality checks, another best practice is the automated security scans of your application to detect security issues and vulnerabilities.
 
-There many solutions for [security scanning](https://codefresh.io/docs/docs/testing/security-scanning/) and several of them support scanning both the source code of the application as well as the resulting container images.
+There are any solutions for [security scanning](https://codefresh.io/docs/docs/testing/security-scanning/) and several of them support scanning both the source code of the application as well as the resulting container images.
 
 For the purposes of this workshop we will use the free [Trivy scanner](https://github.com/aquasecurity/trivy) that is completely open source and self-contained (it doesn't need a subscription or online account to a security service).
 
@@ -74,7 +74,7 @@ and then print on the log out any issues it finds in a text report.
 
 ![Security scans](/images/basic_ci/security-scan.png)
 
-In a real application you would probably have a security dashboard to track all vulnerability over time and you would have multiple security steps (that also focus on the source code as well and not just the container image).
+In a real application you would probably have a security dashboard to track all vulnerabilities over time and you would have multiple security steps (that also focus on the source code as well and not just the container image).
 
 {{% notice info %}}
 In this example application, the pipeline will always continue running regardless of any security issues. With Codefresh you also have the capability to stop the pipeline
@@ -128,7 +128,7 @@ For more details see the [Checking readiness of a service](https://codefresh.io/
 To make sure that your pipeline has enough resources to execute integration tests, click the *Settings* tab on the pipeline editor screen and then the 
 *Runtime* section on the left menu. [Assign your pipeline](https://codefresh.io/docs/docs/configure-ci-cd-pipeline/pipelines/#runtime)
 to a *Medium* instance.
-If you don't see such option then your Codefresh plan is already using Medium instances and there is nothing you need to do.
+If you don't see these options then your Codefresh plan is already using Medium instances and there is nothing you need to do.
 {{% /notice %}}
 
 {{% notice tip %}}

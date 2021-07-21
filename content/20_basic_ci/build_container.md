@@ -111,7 +111,7 @@ The Codefresh build step both builds **and** pushes the image to the registry. E
 
 The first time the pipeline runs, Codefresh will download all dependencies of the application. Every subsequent run will be much faster as the pipeline cache will take effect.
 
-After a while the build should finish with success. All previous runs are in the [Builds page](https://g.codefresh.io/builds2) from now on accessible by clicking on *Builds* in the left sidebar.
+After a while the build should finish with success. All previous runs are in the [Builds page](https://g.codefresh.io/builds2) from now on and are accessible by clicking on *Builds* in the left sidebar.
 
 ![Previous builds](/images/basic_ci/builds.png)
 
@@ -123,7 +123,7 @@ With a successful run of the pipeline you will be able to see your created image
 
 You can click on the row of the image and see additional details and metadata of the image. Feel free to explore the tabs at the top for more information.
 
-The *layers* tabs shows how the image was created and which files/layers contribute to its total size.
+The *layers* tab shows how the image was created and which files/layers contribute to its total size.
 
 ![Docker layers](/images/basic_ci/layers.png)
 

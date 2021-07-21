@@ -128,19 +128,19 @@ The new steps of this pipeline do the following.
 
 1. Clone the repository that contains the Helm chart of the application
 2. Use the [yq](https://github.com/mikefarah/yq) utility to change the value of the image tag
-3. Use the [Codefresh commit plugin](https://codefresh.io/steps/step/git-commit) to push the changes back to the repo. This is a key step in this pipeline because it means that we no longer need to edit manually the manifests and commit/push changes
+3. Use the [Codefresh commit plugin](https://codefresh.io/steps/step/git-commit) to push the changes back to the repo. This is a key step in this pipeline because it means that we no longer need to manually edit the manifests and commit/push changes
 there. The pipeline will take care of this.
 
-Notice also that for the deployment steps we [use conditionals](https://codefresh.io/docs/docs/codefresh-yaml/conditional-execution-of-steps/) to restrict them only to the main branch as we don't want to deploy to our "production" environment when a Pull request happen to an unrelated branch.
+Notice that for the deployment steps we [use conditionals](https://codefresh.io/docs/docs/codefresh-yaml/conditional-execution-of-steps/) to restrict them only to the main branch because we don't want to deploy to our "production" environment when a Pull request happens to an unrelated branch.
 
 ## Running the full pipeline
 
-You can trigger this pipeline as before by making any simple change to the application repository (try changing again the hello world message at the `aws-gitops-app/src/main/java/sample/actuator/HelloWorldService.java` file). Once you commit and push
+You can trigger this pipeline as before by making any simple change to the application repository (try changing again the hello world message again at the `aws-gitops-app/src/main/java/sample/actuator/HelloWorldService.java` file). Once you commit and push
 the pipeline will be automatically triggered. 
 
 ![Change deployment tag](/images/basic_cd/change-tag.png)
 
-It will then
+It will then do the following:
 
 1. Checkout the application source code first
 1. Run unit tests
@@ -151,7 +151,7 @@ It will then
 1. Commit/Push the results back in the manifests repository.
 
 At this point the Codefresh GitOps agent will perform the deployment automatically.
-After some minutes if you visit the application again in your browser you will see the new application version deployed.
+After a few minutes if you visit the application again in your browser you will see the new application version deployed.
 
 
 

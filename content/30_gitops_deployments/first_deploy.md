@@ -10,7 +10,7 @@ The first step is to create an application in the Codefresh UI.
 
 Fork the following repository in your GitHub account https://github.com/codefresh-contrib/aws-gitops-app-manifests.
 
-It is a [simple Helm chart](https://helm.sh/) (the package manager for Kubernetes) that contains 2 manifests, one of the application and one for the Kubernetes service.
+It is a [simple Helm chart](https://helm.sh/) (the package manager for Kubernetes) that contains two manifests, one for the application and one for the Kubernetes service.
 
 After you fork the repository, edit the file `simple-java-app/values.yaml`
 and change the `repository` line to your own `<dockerhub id>`.
@@ -107,7 +107,7 @@ In the Activity column note down the last tag of the container image.
 
 In the example above it is `docker.io/kostiscodefresh/my-app-image:385643c`
 
-Now in Github go your second Git repository that contains the Kubernetes manifests (and not the application source code) and edit the file `aws-gitops-app-manifests/blob/main/simple-java-app/values.yaml` and enter your new container tag.
+Now in Github go to your second Git repository that contains the Kubernetes manifests (and not the application source code). Edit the file `aws-gitops-app-manifests/blob/main/simple-java-app/values.yaml` and enter your new container tag.
 
 ![Edit new version](/images/gitops/new-version-manual.png)
 

@@ -6,16 +6,16 @@ weight = 42
 
 In most cases a production deployment will succeed right away and all application users will be able to use the new features right away.
 
-There will be cases however when a production deployment will have blocker issues and problems. In this case you should be able to roll back to the previous version until 
+However, there will be cases when a production deployment will have blocker issues and problems. In this case you should be able to roll back to the previous version until 
 you have some time to solve the issue (possibly in a staging environment and not production)
 
 ## Choosing a version to rollback to 
 
 Since we are using GitOps, rolling back to a previous version will happen with Git operations.
 
-The first step is to decide which Git version we will rollback. In most case it is the last one, but this is not a strict requirement.
+The first step is to decide which Git version we will rollback. In most cases it is the last one, but this is not a strict requirement.
 
-You can find the last commit hash with multiple ways. The simplest is to use the normal Git tools (such as the Github UI).
+You can find the last commit hash in multiple ways. The simplest is to use the normal Git tools (such as the Github UI).
 
 ![Git](/images/basic_cd/git-history.png)
 
@@ -24,7 +24,7 @@ In most cases however you might want to look at the Codefresh GitOps dashboard a
 ![GitOps history](/images/basic_cd/gitops-history.png)
 
 If you visit the timeline of your application in the Codefresh GitOps dashboard
-you will see at the bottom of the screen the complete history of deployments along with Git hashes.
+you will see the complete history of deployments along with Git hashes at the bottom of the screen.
 
 ## Rolling back to the previous version
 
@@ -37,13 +37,13 @@ git revert --no-edit e4087e7
 git push
 ```
 
-You can also leave out the `--no-edit` option so that you have the ability to put a Git message that hopefully explains why this release was discarded.
+You can also leave out the `--no-edit` option so you have the ability to put a Git message that hopefully explains why this release was discarded.
 
 See the [git revert documentation](https://git-scm.com/docs/git-revert) for more details. 
 
 ## Rolling back to any version
 
-It is also possible to go back to any previous release and not just discard the last one by using the git reset command
+It is also possible to go back to any previous release (and not just discard the last one) using the git reset command
 
 ```
 git reset --hard 3515c7a
