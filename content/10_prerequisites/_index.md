@@ -6,8 +6,6 @@ weight = 10
 
 # Prerequisites
 
-Welcome to the AWS Modernization Workshop with GitOps and Codefresh.
-
 Before you can start the workshop you need to setup free accounts with the following services:
 
 - Create a [GitHub account](https://github.com/join)
